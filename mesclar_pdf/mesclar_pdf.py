@@ -4,7 +4,10 @@ import os
 merger = PyPDF2.PdfMerger()
 
 pasta = "arquivos"
-arquivos_pdf = sorted([f for f in os.listdir(pasta) if f.lower().endswith(".pdf")])
+
+arquivos_pdf = sorted([f for f in os.listdir(pasta) if f.lower().endswith(".pdf")]
+                    #   , key = lambda f: os.path.getmtime(os.path.join(pasta, f)), reverse = True
+                      )
 
 for arquivo in arquivos_pdf:
     caminho_completo = os.path.join(pasta, arquivo)
